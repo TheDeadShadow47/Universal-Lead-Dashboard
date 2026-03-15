@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Admin | Consultation Dashboard</title>
+    <title>Flight Admin | Management Dashboard</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Supabase for Auth -->
+    <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <!-- SheetJS for REAL Excel Export -->
+    <!-- SheetJS for Excel -->
     <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,11 +19,11 @@
         <div class="auth-card">
             <div class="logo-area">✈️</div>
             <h2>Admin Login</h2>
-            <p>Access your flight consultation leads</p>
+            <p>Manage your flight consultation leads</p>
             <form id="login-form">
                 <div class="input-group">
                     <label>Email Address</label>
-                    <input type="email" id="email" placeholder="admin@flightbusiness.com" required>
+                    <input type="email" id="email" placeholder="admin@flight.com" required>
                 </div>
                 <div class="input-group">
                     <label>Password</label>
@@ -51,24 +51,19 @@
         <main class="content">
             <header class="top-bar">
                 <div class="header-title">
-                    <h1>Leads Dashboard</h1>
-                    <p>Manage your incoming flight consultation requests</p>
+                    <h1>Consultation Leads</h1>
+                    <p>Submissions from your website form</p>
                 </div>
                 <div class="action-buttons">
-                    <!-- Added Excel Button -->
-                    <button id="export-excel-btn" class="btn-excel">
-                        <span>📊</span> Download Excel
-                    </button>
-                    <button id="export-csv-btn" class="btn-secondary">
-                        <span>📥</span> Download CSV
-                    </button>
+                    <button id="export-excel-btn" class="btn-excel">📊 Excel Export</button>
+                    <button id="export-csv-btn" class="btn-secondary">📥 CSV</button>
                 </div>
             </header>
 
             <div class="card">
                 <div id="loading-state" class="loading">
                     <div class="spinner"></div>
-                    <p>Fetching data from Netlify...</p>
+                    <p>Loading your leads...</p>
                 </div>
 
                 <div class="table-responsive" id="table-area" style="display: none;">
@@ -80,10 +75,11 @@
                                 <th>Email</th>
                                 <th>Phone</th>
                                 <th>Message</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody id="table-body">
-                            <!-- Netlify data injects here -->
+                            <!-- Rows injected here -->
                         </tbody>
                     </table>
                 </div>
