@@ -43,7 +43,7 @@ Exports:
 
 /universal-lead-dashboard
 │
-├── admin.html
+├── index.html
 ├── style.css
 ├── script.js
 └── README.md
