@@ -67,7 +67,7 @@ Local Development
 
 You can run the dashboard locally by simply opening:
 
-admin.html
+index.html
 
 Or by using a local development server such as VS Code Live Server.
 
